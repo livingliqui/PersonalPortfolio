@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: #000;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      min-height: 100vh;
+    }
+    a {
+      color: #daa520;
+      text-decoration: none;
+      font-family: monospace;
+      font-size: 16px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      color: #daa520;
+      font-family: monospace;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .project-card {
+      border: 2px solid #daa520;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .project-card .label {
+      padding: 15px;
+      color: white;
+      font-family: monospace;
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <a href="index.html">← Back to Home</a>
+    <h1>Projects</h1>
+    <div class="projects-grid">
+
+      <div class="project-card" onclick="window.location.href='project1.html'">
+        <img src="project1.png" alt="Project 1">
+        <div class="label">City Network</div>
+      </div>
+
+      <div class="project-card" onclick="window.location.href='project2.html'">
+        <img src="project2.png" alt="Project 2">
+        <div class="label">Interactive Field</div>
+      </div>
+
+      <div class="project-card" onclick="window.location.href='project3.html'">
+        <img src="project3.png" alt="Project 3">
+        <div class="label">Retro Sony Logo</div>
+      </div>
+
+      <div class="project-card" onclick="window.location.href='project4.html'">
+        <img src="project4.png" alt="Project 4">
+        <div class="label">A Walk at Dusk</div>
+      </div>
+
+    </div>
+  </div>
+  <script src="dots-bg.js"></script>
+</body>
+</html>

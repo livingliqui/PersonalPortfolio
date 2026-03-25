@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: #000;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      min-height: 100vh;
+    }
+    a {
+      color: #daa520;
+      text-decoration: none;
+      font-family: monospace;
+      font-size: 16px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .profile-img {
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      border: 2px solid #daa520;
+      border-radius: 20px;
+    }
+    .typing-text {
+      position: absolute;
+      left: 380px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-family: monospace;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 500px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      background: #daa520;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <a href="index.html">← Back to Home</a>
+    <img src="me.JPEG" alt="Photo of me" class="profile-img">
+    <div class="typing-text">
+      <span id="typed"></span><span class="cursor"></span>
+    </div>
+  </div>
+  <script src="dots-bg.js"></script>
+  <script>
+    const fullText = "Hi! My Name is Hamed Alolama and im a third year student majoring in majoring in civil engineering with a mninor in urbanization. I was born and raised in the UAE specifically Abu Dhabi and im studying away in New York this semester.I've taken this coarse to explore and learn new ways of thinking about code and all the different types of cool applications that it could be used for!";
+
+    const typedElement = document.getElementById('typed');
+    let index = 0;
+    let speed = 40;
+
+    function type() {
+      if (index < fullText.length) {
+        typedElement.textContent += fullText[index];
+        index++;
+        setTimeout(type, speed);
+      }
+    }
+
+    setTimeout(type, 500);
+  </script>
+</body>
+</html>
